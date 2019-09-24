@@ -23,6 +23,7 @@ namespace ForLoop
             HorizontalLine(n, 'A');
             VerticalLine(n);
             DiagonalLine(n);
+            IsoscelesTriangle(n, 'B');
             
             
         }
@@ -65,6 +66,19 @@ namespace ForLoop
         // third line n-3 spaces, 1 star, 3 spaces, 1 star
         // fourth line n-4 spaces, 1 star, 5 spaces, 1 star
         // last line 2n-1 stars
+        static void IsoscelesTriangle(int n, char c)
+        {
+            //first line
+            HorizontalLine(n - 1, ' '); HorizontalLine(1, '*');
+            int a = 2, b = 1;
+            for (int i = 0; i < n - 2; i++ )
+            {
+                HorizontalLine(n-a, ' '); HorizontalLine(1, c); 
+                HorizontalLine(b, ' '); HorizontalLine(1, c); Console.WriteLine();
+            }
+            //last line
+            HorizontalLine(2 * n - 1, c); Console.WriteLine();
+        }
 
     }
 }
